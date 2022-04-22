@@ -1,12 +1,23 @@
 <template>
-  <div >
-   
+  <div class="row mt-5" >
+  <h1 class="text-uppercase text-white" v-if=" film.length >0">film:</h1>
+   <CardComp 
+   v-for="(element,index) in film" :key="index"
+   :img="element.poster_path"
+   />
   </div>
 </template>
 
 <script>
+import CardComp from './CardComp.vue'
+
+
 export default {
+  components:{
+    CardComp
+  },
   name: 'FilmComp',
+  props:['film']
 
 }
 </script>
