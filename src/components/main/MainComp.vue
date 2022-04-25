@@ -1,6 +1,6 @@
 <template>
 <div class="bg_custom2">
-  <div class="container">
+  <div class="container p-5">
     
    <FilmComp :film="film"/>
    <SerieComp :serie='serie'/>
