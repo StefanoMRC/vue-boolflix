@@ -3,7 +3,7 @@
         <img src="../../assets/img/Netflix-logo-500x281.png" alt="">
         <div class="input-group mb-3 w-25 d-flex align-items-center">
             <input type="text" class="form-control" placeholder="Cerca il tuo film" aria-label="Recipient's username"
-                aria-describedby="button-addon2" v-model="ricerca">
+                aria-describedby="button-addon2" v-model="ricerca" @keyup.enter.prevent="$emit('funzRicerca', ricerca)">
             <button class="btn btn-outline-secondary bg-danger text-white" type="submit" id="button-addon2"
                 @click.prevent="$emit('funzRicerca', ricerca)" 
             >Avvia Ricerca</button>

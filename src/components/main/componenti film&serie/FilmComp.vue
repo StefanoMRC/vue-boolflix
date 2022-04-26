@@ -20,7 +20,9 @@ export default {
     CardComp
   },
   name: 'FilmComp',
-  props:['film']
+  props:{
+    film:Array
+  }
 
 }
 </script>

@@ -4,6 +4,9 @@
    <CardComp 
    v-for="(element,index) in serie" :key="index"
    :img="element.poster_path"
+   :voto='element.vote_average'
+   :trama='element.overview'
+   :titolo='element.original_title'
    />
   </div>
 </template>
@@ -15,7 +18,9 @@ export default {
     CardComp
   },
   name: 'SerieComp',
-    props:['serie']
+    props:{
+      serie:Array
+    }
 
 
 

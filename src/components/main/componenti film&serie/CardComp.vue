@@ -4,8 +4,14 @@
       <img  :src="`https://image.tmdb.org/t/p/w500/${img}`" alt="">
       <div class="card_info d-flex flex-column p-2">
         <div class="p-1"><h5>Titolo originale:</h5><span>{{titolo}}</span></div>
-        <div class="p-1"><h5>Valutazione</h5><span>{{numero}}</span></div>
-        <div class="p-1" v-if="trama !=''" ><h5>Trama:</h5><span>{{trama}}</span></div>
+        <div class="p-1">
+          <h5>Valutazione</h5>
+          <!-- <span v-for="(element,index) in pippo()" :key="index">{{element}}</span> -->
+          <div class="d-flex">
+            <img v-for="(element,index) in pippo()" :key="index" :src="`../../../assets/img/${element}`" alt="">
+          </div> 
+        </div>
+        <div class="p-1" v-if="trama !=''" ><h5>Trama:</h5><span class="testo">{{trama}}</span></div>
         <div class="p-1" v-else ><h5>Trama:</h5><span>Trama non disponibile</span></div>
       </div>
     </div>
@@ -28,6 +34,14 @@ export default {
     }
   },
   methods: {
+   pippo: function() {
+     this.arrayStar=[]
+      for(let i=0; i<=this.numero; i++){
+        this.arrayStar.push('stellapiena.png')
+      }
+      return this.arrayStar
+    }
+  
 
 }
 }
@@ -63,10 +77,15 @@ export default {
       h5{
         margin: 0;
       }
+      .testo{
+        text-align: justify;
+        display: inline-block;
+      }
     }
     
       
     
   }
   .card_principale:hover .card_info{ z-index: 3;}
+  
 </style>

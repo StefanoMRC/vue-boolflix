@@ -18,7 +18,10 @@ export default {
     FilmComp,
     SerieComp
   },
-  props:['film','serie']
+  props:{
+    film: Array,
+    serie:Array
+  }
   
    
   
