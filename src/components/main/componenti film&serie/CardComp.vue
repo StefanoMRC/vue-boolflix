@@ -47,24 +47,24 @@
     data() {
       return {
         numero: Math.round(this.voto / 2),
-        arrayStar: [],
-        arrayStar2: []
+        
+        
       }
     },
     methods: {
       stellaPiena: function () {
-        this.arrayStar = []
+        let arrayStar= []
         for (let i = 0; i < this.numero; i++) {
-          this.arrayStar.push(img)
+          arrayStar.push(img)
         }
-        return this.arrayStar
+        return arrayStar
       },
       stellaVuota: function () {
-        this.arrayStar2 = []
+        let arrayStar2 = []
         for (let i = this.numero; i < 5; i++) {
-          this.arrayStar2.push(img2)
+          arrayStar2.push(img2)
         }
-        return this.arrayStar2
+        return arrayStar2
       }
 
 
