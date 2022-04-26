@@ -23,9 +23,9 @@
         <h5>Trama:</h5>
         <span class="testo">{{trama}}</span>
       </div>
-      <div class="p-1" v-else>
+      <div class="p-1 text-center" v-else>
         <h5>Trama:</h5>
-        <span>Trama non disponibile</span>
+        <span class="testo">Trama non disponibile</span>
       </div>
     </div>
   </div>

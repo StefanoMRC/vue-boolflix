@@ -6,7 +6,7 @@
    :img="element.poster_path"
    :voto='element.vote_average'
    :trama='element.overview'
-   :titolo='element.original_name'
+   :titolo='element.name'
    :lingua='element.original_language'
    />
   </div>

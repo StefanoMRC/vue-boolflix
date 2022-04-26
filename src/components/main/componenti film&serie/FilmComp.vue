@@ -2,12 +2,12 @@
   <div class="row mt-3" >
   <h1 class="text-uppercase text-white" v-if=" film.length >0">film:</h1>
    <CardComp 
-   v-for="(element,index) in film" :key="index"
-   :img="element.poster_path"
-   :voto='element.vote_average'
-   :trama='element.overview'
-   :titolo='element.original_title'
-   :lingua='element.original_language'
+   v-for="(elem,index) in film" :key="index"
+   :img="elem.poster_path"
+   :voto='elem.vote_average'
+   :trama='elem.overview'
+   :titolo='elem.original_title'
+   :lingua='elem.original_language'
    />
   </div>
 </template>
