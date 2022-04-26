@@ -7,6 +7,7 @@
    :voto='element.vote_average'
    :trama='element.overview'
    :titolo='element.original_title'
+   :lingua='element.original_language'
    />
   </div>
 </template>
