@@ -33,8 +33,11 @@ export default {
   methods: {
     metodoRicerca(testo){
           this.testoRicerca=testo;
+          this.film=[]
+          this.serie=[]
           axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&language=it&page=1&include_adult=false&query=${this.testoRicerca}`)
       .then((res)=>{
+          
           console.log(res.data.results)
           this.film=res.data.results
           console.log(this.film)
@@ -42,6 +45,7 @@ export default {
       }),
       axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${this.apiKey}&language=it&page=1&include_adult=false&query=${this.testoRicerca}`)
       .then((res)=>{
+          
           console.log(res.data.results)
           this.serie=res.data.results
           console.log(this.serie)
