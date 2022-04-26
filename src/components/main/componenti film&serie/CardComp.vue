@@ -16,7 +16,7 @@
         <!-- <span v-for="(element,index) in pippo()" :key="index">{{element}}</span> -->
         <div class="d-flex">
           <img class="stella" v-for="(element,index) in stellaPiena()" :key="index" :src="element" alt="">
-          <img class="stella" v-for="(elem,index) in stellaVuota()" :key="index" :src="elem" alt="">
+          <img class="stella" v-for="(elem,index) in stellaVuota()" :key="'A'+index" :src="elem" alt="">
         </div>
       </div>
       <div class="p-1 text-center" v-if="trama !=''">
