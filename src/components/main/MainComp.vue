@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import FilmComp from './ComponentiFilm&Serie'
-import SerieComp from './ComponentiFilm&Serie'
+import FilmComp from './componenti film&serie'
+import SerieComp from './componenti film&serie'
 export default {
   name: 'MainComp',
   components:{
