@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import FilmComp from './componenti film&serie/FilmComp.vue'
-import SerieComp from './componenti film&serie/SerieComp.vue'
+import FilmComp from './componenti film&serie'
+import SerieComp from './componenti film&serie'
 export default {
   name: 'MainComp',
   components:{
@@ -19,7 +19,7 @@ export default {
     SerieComp
   },
   props:{
-    film: Array,
+    film:Array,
     serie:Array
   }
   
