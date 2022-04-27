@@ -1,5 +1,5 @@
 <template>
-  <div class="row mt-5" >
+  <div class="row flex-wrap mt-5" >
   <h1 class="text-uppercase text-white" v-if=" serie.length >0">serie:</h1>
    <CardComp 
    v-for="(element,index) in serie" :key="index"

@@ -1,7 +1,11 @@
 <template>
 
-  <div class="col-2 g-3 mx-2 card_principale p-0">
-    <img :src="`https://image.tmdb.org/t/p/w500/${img}`" alt="">
+  <div class="col-2 g-2 mx-2 card_principale p-0">
+    <div class="flip-card-inner">
+      <div class="card_foto">
+      <img :src="`https://image.tmdb.org/t/p/w500/${img}`" alt="">
+      </div>
+    
     <div class="card_info d-flex flex-column p-2 align-items-center">
       <div class="p-1 text-center">
         <h5>Titolo originale:</h5>
@@ -28,6 +32,8 @@
         <span class="testo">Trama non disponibile</span>
       </div>
     </div>
+    </div>
+    
   </div>
 
 </template>
@@ -76,31 +82,49 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   .card_principale {
-    position: relative;
-
-    img {
+    background-color: transparent;
+    perspective: 1000px;
+    width: 220px;
+    height: 300px;
+    
+    .flip-card-inner{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      
+    .card_foto{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden; /* Safari */
+      backface-visibility: hidden;
+      
+      img {
       height: 100%;
       width: 100%;
-      position: relative;
-      z-index: 2;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
+      border-radius: 20px;
     }
 
+    }
+    
     .card_info {
       height: 100%;
       width: 100%;
       position: absolute;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0;
-      background: rgba(0, 0, 0, 0.507);
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden; /* Safari */
+      backface-visibility: hidden;
+      background: #2e3a46;
       color: white;
       overflow-y: auto;
+      
       z-index: 1;
+      transform: rotateY(180deg);
+      border-radius: 20px;
 
       h5 {
         margin: 0;
@@ -141,9 +165,14 @@
         background-position: center;
       }
     }
+    }
   }
+  .card_principale:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.card_info::-webkit-scrollbar {
+  display: none;
+}
 
-  .card_principale:hover .card_info {
-    z-index: 3;
-  }
+  
 </style>
