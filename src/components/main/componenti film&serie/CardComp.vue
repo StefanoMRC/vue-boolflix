@@ -3,7 +3,8 @@
   <div class="col-2 g-2 mx-2 card_principale p-0">
     <div class="flip-card-inner">
       <div class="card_foto">
-        <img :src="`https://image.tmdb.org/t/p/w500/${img}`" alt="">
+        <!-- <img :src="`https://image.tmdb.org/t/p/w500/${img}`" alt=""> -->
+        <img :class="(img ==null)? `bg_custom p-2`:''" :src="(img ==null)? `https://i.ebayimg.com/images/g/Fv8AAOSwfIVgCawI/s-l300.png`: `https://image.tmdb.org/t/p/w500/${img}`" alt="">
       </div>
 
       <div class="card_info d-flex flex-column p-2 align-items-center">
@@ -40,7 +41,7 @@
 </template>
 
 <script>
-  import img from '../../../assets/img/stellapiena.png'
+  import img1 from '../../../assets/img/stellapiena.png'
   import img2 from '../../../assets/img/stellavuota.png'
   export default {
     name: 'CardComp',
@@ -62,7 +63,7 @@
       stellaPiena: function () {
         let arrayStar = []
         for (let i = 0; i < this.numero; i++) {
-          arrayStar.push(img)
+          arrayStar.push(img1)
         }
         return arrayStar
       },
@@ -182,4 +183,5 @@
   .card_info::-webkit-scrollbar {
     display: none;
   }
+  
 </style>
